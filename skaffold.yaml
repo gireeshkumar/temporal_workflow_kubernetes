@@ -1,0 +1,35 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+metadata:
+  name: string-app-root
+build:
+  artifacts:
+    - image: gireeshkumarg/kebab
+      context: kebab
+      docker:
+        dockerfile: Dockerfile
+    - image: gireeshkumarg/reverse
+      context: reverse
+      docker:
+        dockerfile: Dockerfile
+    - image: gireeshkumarg/uppercase
+      context: uppercase
+      docker:
+        dockerfile: Dockerfile
+    - image: gireeshkumarg/stringactions-wf
+      context: stringactions-wf
+      docker:
+        dockerfile: Dockerfile
+
+profiles:
+  - name: dev
+    manifests:
+      rawYaml:
+        - k8s/dev/kebab/deployment.yaml
+        - k8s/dev/kebab/service.yaml
+        - k8s/dev/reverse/deployment.yaml
+        - k8s/dev/reverse/service.yaml
+        - k8s/dev/uppercase/deployment.yaml
+        - k8s/dev/uppercase/service.yaml
+        - k8s/dev/stringactions-wf/deployment.yaml
+        - k8s/dev/stringactions-wf/service.yaml

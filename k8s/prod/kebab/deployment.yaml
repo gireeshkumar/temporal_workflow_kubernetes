@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kebab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kebab
+  template:
+    metadata:
+      labels:
+        app: kebab
+    spec:
+      containers:
+      - name: kebab
+        image: gireeshkumarg/kebab
+        env:
+          - name: TEMPORAL_SERVER
+            value: temporaltest-frontend:7233
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080

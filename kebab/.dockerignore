@@ -1,0 +1,2 @@
+# Add files and directories that don't need to be copied
+.gradle

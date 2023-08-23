@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uppercase
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uppercase
+  template:
+    metadata:
+      labels:
+        app: uppercase
+    spec:
+      containers:
+      - name: uppercase
+        image: gireeshkumarg/uppercase
+        env:
+          - name: TEMPORAL_SERVER
+            value: temporaltest-frontend:7233
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
