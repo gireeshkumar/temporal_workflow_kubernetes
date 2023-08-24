@@ -7,6 +7,8 @@ It uses Gradle sub projects, with each project has its on Docker image and run a
 
 ### Projects
 
+![Structure](./‎git-workflow.‎001.jpeg)
+
 #### Lib
 
   Contains common classes and interfaces, it also contains common code for registering, starting Workers, register activities etc
@@ -35,7 +37,7 @@ It uses Gradle sub projects, with each project has its on Docker image and run a
 
  Workflow to do String reverse functionality
 
-#### reverse
+#### kebab
 
  Workflow to do change the string to "kebab" case (like "kebab-case-example" )
  This workflow shows the use of a local Activity

@@ -10,10 +10,8 @@ build/
 !**/src/test/**/build/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
+.idea
 *.iws
 *.iml
 *.ipr
@@ -40,6 +38,7 @@ bin/
 /nbdist/
 /.nb-gradle/
 
+
 ### VS Code ###
 .vscode/
 
@@ -51,3 +50,4 @@ bin/
 **/.gradle
 
 *.hprof
+.idea/gradle.xml
